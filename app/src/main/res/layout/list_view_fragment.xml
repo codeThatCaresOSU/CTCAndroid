@@ -18,6 +18,7 @@
         android:textColor="@color/black"
         android:textSize="42sp"/>
     <ListView
+        android:id="@+id/list_view"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:layout_width="match_parent"
