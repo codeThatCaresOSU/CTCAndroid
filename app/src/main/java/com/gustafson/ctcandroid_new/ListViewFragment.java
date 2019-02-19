@@ -11,7 +11,7 @@ public class ListViewFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstances){
         View rootview = inflater.inflate(R.layout.list_view_fragment, container, false);
-        ((TextView) rootview.findViewById(R.id.fragment_1_textview)).setText("Fragment Number One");
+        //((TextView) rootview.findViewById(R.id.fragment_1_textview)).setText("Fragment Number One");
         return rootview;
     }
 }

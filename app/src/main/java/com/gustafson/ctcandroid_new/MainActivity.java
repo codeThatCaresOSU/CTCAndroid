@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +21,9 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new MyAdapter(getSupportFragmentManager());
         mPager = (ViewPager) findViewById(R.id.pager_view);
         mPager.setAdapter(mAdapter);
+        //mPager.setBackgroundResource(R.drawable.bg);
     }
+
     public static class MyAdapter extends FragmentPagerAdapter {
         public MyAdapter(FragmentManager fm) {
             super(fm);
@@ -42,5 +45,4 @@ public class MainActivity extends AppCompatActivity {
             return fragment;
         }
     }
-
 }
