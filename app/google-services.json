@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "971841440381",
+    "firebase_url": "https://ctcios.firebaseio.com",
+    "project_id": "ctcios",
+    "storage_bucket": "ctcios.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971841440381:android:d104e64e0927a907",
+        "android_client_info": {
+          "package_name": "com.gustafson.ctcandroid_new"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "971841440381-ah9nu49mmv2ql58krpfcqfj9tk39ifs2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATYo-hr6KCrVkvxx5YwJ8ptgAsynVIEm4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
