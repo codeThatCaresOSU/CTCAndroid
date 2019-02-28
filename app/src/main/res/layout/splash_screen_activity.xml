@@ -7,14 +7,28 @@
     android:layout_height="match_parent"
     android:id="@+id/motionLayout"
     app:layoutDescription="@xml/heart_animation"
-    app:showPaths="false">
+    app:showPaths="false"
+    android:background="@color/black">
 
     <TextView
+        android:textColor="@color/green"
         android:id="@+id/welcome_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="40sp"
         android:text="Welcome To\nCode That Cares..." />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/scroll_down_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_fileName="scrolldown.json"
+        app:lottie_imageAssetsFolder="images"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heart_animation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.8"/>
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/heart_animation"
@@ -26,6 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
+        android:textColor="@color/green"
         android:text="@string/left_bracket"
         android:textSize="150sp"
         android:id="@+id/left_bracket"
@@ -35,6 +50,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
+        android:textColor="@color/green"
         android:text="@string/right_bracket"
         android:textSize="150sp"
         android:id="@+id/right_bracket"
@@ -43,5 +59,7 @@
         app:layout_constraintStart_toEndOf="@id/heart_animation"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+
 
 </android.support.constraint.motion.MotionLayout>

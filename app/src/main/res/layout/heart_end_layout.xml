@@ -3,9 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
     <TextView
+        android:textColor="@color/green"
         android:id="@+id/welcome_to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,15 +19,28 @@
         android:text="Welcome To\nCode That Cares"/>
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/scroll_down_splash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_fileName="scrolldown.json"
+        app:lottie_imageAssetsFolder="images"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="64dp"/>
+
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/heart_animation"
-        android:layout_width="1000dp"
-        android:layout_height="1000dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintDimensionRatio="1:1"
         app:lottie_rawRes="@raw/heart"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
+        android:textColor="@color/green"
         android:text="@string/left_bracket"
         android:textSize="150sp"
         android:id="@+id/left_bracket"
@@ -35,6 +50,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
+        android:textColor="@color/green"
         android:text="@string/right_bracket"
         android:textSize="150sp"
         android:id="@+id/right_bracket"
@@ -43,5 +59,8 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
 
 </android.support.constraint.ConstraintLayout>
