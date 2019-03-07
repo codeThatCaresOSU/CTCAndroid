@@ -8,9 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.gauravk.bubblenavigation.BubbleNavigationConstraintView;
+import com.gauravk.bubblenavigation.listener.BubbleNavigationChangeListener;
+
 public class MainActivity extends AppCompatActivity {
 
-    static final int NUM_ITEMS = 2;
+    static final int NUM_ITEMS = 3;
     MyAdapter mAdapter;
     ViewPager mPager;
 
@@ -22,6 +25,29 @@ public class MainActivity extends AppCompatActivity {
         mPager = (ViewPager) findViewById(R.id.pager_view);
         mPager.setAdapter(mAdapter);
         //mPager.setBackgroundResource(R.drawable.bg);
+        final BubbleNavigationConstraintView bubView = (BubbleNavigationConstraintView) findViewById(R.id.top_navigation_constraint);
+        bubView.setNavigationChangeListener(new BubbleNavigationChangeListener() {
+            @Override
+            public void onNavigationChanged(View view, int position) {
+                mPager.setCurrentItem(position);
+            }
+        });
+        mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                bubView.setCurrentActiveItem(i);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+                //bubView.setCurrentActiveItem(i);
+            }
+        });
     }
 
     public static class MyAdapter extends FragmentPagerAdapter {
@@ -39,8 +65,10 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment;
             if(position == 0) {
                 fragment = new ListViewFragment();
-            } else {
+            } else if(position == 1){
                 fragment = new RightScreenFragment();
+            } else {
+                fragment = new SponsorsFragment();
             }
             return fragment;
         }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@layout/list_view_constraint"
+        motion:constraintSetEnd="@layout/list_view_constraint_end">
+        <OnSwipe
+            motion:maxVelocity=".1"
+            motion:touchAnchorId="@+id/list_view"
+            motion:touchAnchorSide="bottom"
+            motion:dragDirection="dragUp"
+            motion:moveWhenScrollAtTop="true"/>
+    </Transition>
+
+</MotionScene>

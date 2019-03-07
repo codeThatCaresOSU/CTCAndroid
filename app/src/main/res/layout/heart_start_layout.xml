@@ -29,9 +29,12 @@
         app:layout_constraintTop_toBottomOf="@+id/heart_animation"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="32dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:layout_constraintVertical_bias="1" />
 
     <com.airbnb.lottie.LottieAnimationView
+        android:background="@android:color/transparent"
         android:id="@+id/heart_animation"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -41,6 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
+        android:fontFamily="@font/adventpro"
         android:textColor="@color/green"
         android:text="@string/left_bracket"
         android:textSize="150sp"
@@ -51,6 +55,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
     <TextView
+        android:fontFamily="@font/adventpro"
         android:textColor="@color/green"
         android:text="@string/right_bracket"
         android:textSize="150sp"

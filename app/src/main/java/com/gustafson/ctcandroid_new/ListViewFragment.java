@@ -9,13 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.GeoPoint;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class ListViewFragment extends Fragment {
     private FirebaseFirestore db;
@@ -44,6 +47,16 @@ public class ListViewFragment extends Fragment {
                 }
             }
         });
+        eventsList.add(new Event("test", "taytow", new GeoPoint(0,0), 0, new Timestamp(new Date())));
+        eventsList.add(new Event("test", "taytow", new GeoPoint(0,0), 0, new Timestamp(new Date())));
+        eventsList.add(new Event("test", "taytow", new GeoPoint(0,0), 0, new Timestamp(new Date())));
+        eventsList.add(new Event("test", "taytow", new GeoPoint(0,0), 0, new Timestamp(new Date())));
+        eventsList.add(new Event("test", "taytow", new GeoPoint(0,0), 0, new Timestamp(new Date())));
+        eventsList.add(new Event("test", "taytow", new GeoPoint(0,0), 0, new Timestamp(new Date())));
+        eventsList.add(new Event("test", "taytow", new GeoPoint(0,0), 0, new Timestamp(new Date())));
+        eventsList.add(new Event("test", "taytow", new GeoPoint(0,0), 0, new Timestamp(new Date())));
+
+
         //((ListView) rootview.findViewById(R.id.list_view)).setAdapter(new ListViewAdapter(getContext(), eventsList));
         return rootview;
     }

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.constraint.motion.MotionLayout
+<android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    app:layoutDescription="@xml/list_view_animation">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
         android:id="@+id/c_t_c"
@@ -15,7 +12,7 @@
         android:text="@string/club_name"
         android:textColor="@color/black"
         android:textSize="42sp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"/>
@@ -31,4 +28,4 @@
         app:layout_constraintBottom_toBottomOf="parent">
     </ListView>
 
-</android.support.constraint.motion.MotionLayout>
+</android.support.constraint.ConstraintLayout>

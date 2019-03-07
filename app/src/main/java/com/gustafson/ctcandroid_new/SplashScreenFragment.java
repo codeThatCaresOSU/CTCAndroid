@@ -43,6 +43,7 @@ public class SplashScreenFragment extends Fragment {
                     ft.addToBackStack(null);
                     ft.commit();
                 }
+
             }
 
             @Override
