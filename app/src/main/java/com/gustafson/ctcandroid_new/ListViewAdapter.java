@@ -25,9 +25,15 @@ public class ListViewAdapter extends ArrayAdapter<CTCEvents> {
         TextView date = (TextView) listItemView.findViewById(R.id.date_list_item);
         TextView time = (TextView) listItemView.findViewById(R.id.time_list_item);
         TextView place = (TextView) listItemView.findViewById(R.id.location_list_item);
+<<<<<<< Updated upstream
         name.setText(event.getEventName());
         date.setText(event.getDate());
         time.setText(event.getTime());
+=======
+        name.setText(event.getTitle());
+        //date.setText(event.getTimeStamp());
+        //time.setText(event.getTimeStamp());
+>>>>>>> Stashed changes
         place.setText(event.getLocation());
         return listItemView;
     }

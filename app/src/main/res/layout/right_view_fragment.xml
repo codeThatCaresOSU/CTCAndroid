@@ -3,13 +3,24 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <TextView
+
+
+    <Switch
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:id="@+id/fragment_2_textview"/>
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/notification"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:id="@+id/notification_switch"/>
+
+    <Button
+        android:id="@+id/replay_splash_screen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/splash_screen"
+        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
