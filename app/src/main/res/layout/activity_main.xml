@@ -6,16 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@drawable/bg">
-    <TextView
+    android:background="@drawable/image">
+
+    <com.gauravk.bubblenavigation.BubbleNavigationConstraintView
+        android:id="@+id/top_navigation_constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/what_is_next"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp"
-        android:textColor="@color/white"/>
+        android:background="@android:color/white"
+        android:layout_margin="16dp"
+        android:elevation="4dp"
+        app:bnc_mode="spread">
 
-    <android.support.v4.view.ViewPager
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/bubble_panel_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_icon="@drawable/home"
+            app:bt_title="Home"
+            app:bt_colorActive="@color/green"/>
+
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/bubble_panel_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_icon="@drawable/settings"
+            app:bt_title="Settings"
+            app:bt_colorActive="@color/green"/>
+
+    </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
+
+    <androidx.viewpager.widget.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/pager_view"/>

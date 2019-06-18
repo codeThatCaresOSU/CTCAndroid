@@ -2,4 +2,12 @@
     <string name="app_name">CTCAndroid_new</string>
     <string name="club_name">Code That Cares</string>
     <string name="what_is_next">What\'s Next?</string>
+    <string name="left_bracket">\u003c</string>
+    <string name="right_bracket">\u003e</string>
+    <string name="channel_name">default_channel</string>
+    <string name="channel_description">notifications from Code That Cares</string>
+    <string name="notification">notification</string>
+    <string name="splash_screen">Play the splash screen again</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="splash">Play Splash Screen On Startup</string>
 </resources>
