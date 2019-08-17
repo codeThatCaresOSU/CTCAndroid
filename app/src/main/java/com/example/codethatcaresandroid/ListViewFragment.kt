@@ -1,6 +1,7 @@
 package com.example.codethatcaresandroid
 
 import android.content.Context
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -24,11 +25,11 @@ private lateinit var recycler: RecyclerView
 private lateinit var viewAdapter: RecyclerView.Adapter<*>
 private lateinit var viewManager: RecyclerView.LayoutManager
 
-class ListViewFragment : Fragment() {
+class ListViewFragment : Fragment(), RecyclerCallbackInterface {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView: View = inflater.inflate(R.layout.calendar_view_fragment, container, false)
         viewManager = LinearLayoutManager(context)
-        viewAdapter = CalendarAdapter(events)
+        viewAdapter = CalendarAdapter(events, this)
         recycler = rootView.findViewById<RecyclerView>(R.id.recycler_view).apply {
             setHasFixedSize(true)
             layoutManager = viewManager
@@ -36,6 +37,15 @@ class ListViewFragment : Fragment() {
         }
         getJsonData(context!!).execute(url)
         return rootView
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+    override fun startActivityFromAdapter(intent: Intent) {
+        startActivity(intent)
     }
 
     class getJsonData(val c: Context) : AsyncTask<String, Void, ArrayList<CTCEvents>>() {
@@ -78,8 +88,10 @@ class ListViewFragment : Fragment() {
             return formatToJson(response.toString())
         }
 
-        override fun onPostExecute(events: ArrayList<CTCEvents>) {
-            recycler.adapter = CalendarAdapter(events)
+        override fun onPostExecute(eventsList: ArrayList<CTCEvents>) {
+            events.clear()
+            events.addAll(eventsList)
+            viewAdapter.notifyDataSetChanged()
         }
 
         private fun formatToJson(s: String): ArrayList<CTCEvents> {

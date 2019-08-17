@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
@@ -23,7 +24,7 @@
             android:layout_height="wrap_content"
             app:bt_icon="@drawable/home"
             app:bt_title="Home"
-            app:bt_colorActive="@color/green"/>
+            app:bt_colorActive="@color/purp"/>
 
         <com.gauravk.bubblenavigation.BubbleToggleView
             android:id="@+id/bubble_panel_settings"
@@ -31,7 +32,7 @@
             android:layout_height="wrap_content"
             app:bt_icon="@drawable/settings"
             app:bt_title="Settings"
-            app:bt_colorActive="@color/green"/>
+            app:bt_colorActive="@color/purp"/>
 
     </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>
 

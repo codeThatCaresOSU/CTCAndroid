@@ -10,4 +10,6 @@
     <string name="splash_screen">Play the splash screen again</string>
     <string name="enable_notifications">Enable Notifications</string>
     <string name="splash">Play Splash Screen On Startup</string>
+    <string name="upcoming_events">Upcoming Events</string>
+    <string name="no_activity_found">No Calendar App Found</string>
 </resources>
