@@ -13,7 +13,7 @@
         android:id="@+id/top_navigation_constraint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
+        android:background="#33ffffff"
         android:layout_margin="16dp"
         android:elevation="4dp"
         app:bnc_mode="spread">
@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             app:bt_icon="@drawable/home"
             app:bt_title="Home"
+            app:bt_colorInactive="@android:color/white"
             app:bt_colorActive="@color/purp"/>
 
         <com.gauravk.bubblenavigation.BubbleToggleView
@@ -32,6 +33,7 @@
             android:layout_height="wrap_content"
             app:bt_icon="@drawable/settings"
             app:bt_title="Settings"
+            app:bt_colorInactive="@android:color/white"
             app:bt_colorActive="@color/purp"/>
 
     </com.gauravk.bubblenavigation.BubbleNavigationConstraintView>

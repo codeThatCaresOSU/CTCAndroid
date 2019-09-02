@@ -1,29 +1,16 @@
 package com.example.codethatcaresandroid
 
 import android.content.ActivityNotFoundException
-import android.content.ContentUris
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.net.Uri
-import android.provider.CalendarContract
-import android.text.Layout
-import android.text.format.DateFormat
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.ctc_event_list_item.view.*
 import java.text.SimpleDateFormat
-import java.time.LocalDate
 import java.util.*
-import kotlin.collections.ArrayList
-import androidx.core.content.ContextCompat.startActivity
 
 const val MINS_TO_MS: Long = 60000L
 
@@ -59,7 +46,11 @@ class CalendarAdapter(private val ctcEvents: ArrayList<CTCEvents>, private val c
         holder.title.text = ctcEvents[position].title
         holder.details.text = ctcEvents[position].detail
         holder.location.text = ctcEvents[position].location
-        holder.leftCalendarContainer.setBackgroundColor(Color.parseColor(ctcEvents[position].displayColor))
+        try {
+            holder.leftCalendarContainer.setBackgroundColor(Color.parseColor(ctcEvents[position].displayColor))
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
         holder.addToCal.setOnClickListener {
 
             val intent = Intent(Intent.ACTION_EDIT)
@@ -68,7 +59,7 @@ class CalendarAdapter(private val ctcEvents: ArrayList<CTCEvents>, private val c
             intent.putExtra("beginTime", ctcEvents[position].startTime * 1000L)
             intent.putExtra("endTime", (ctcEvents[position].startTime * 1000L) + (ctcEvents[position].duration * MINS_TO_MS))
             try {
-                startActivity(it.context, intent, null)
+                callback.startActivityFromAdapter(intent)
             } catch (e: ActivityNotFoundException) {
                 Toast.makeText(it.context, it.context.getString(R.string.no_activity_found), Toast.LENGTH_LONG).show()
             }

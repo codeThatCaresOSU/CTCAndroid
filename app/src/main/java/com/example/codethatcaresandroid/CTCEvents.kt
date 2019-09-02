@@ -1,6 +1,5 @@
 package com.example.codethatcaresandroid
 
-import org.json.JSONArray
 import org.json.JSONObject
 
 public class CTCEvents (val title: String, val location: String, val detail: String, val displayColor: String, val startTime: Long, val duration: Int) {
