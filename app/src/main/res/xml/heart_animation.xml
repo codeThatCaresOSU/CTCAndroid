@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+    <Transition
+        motion:constraintSetStart="@layout/heart_start_layout"
+        motion:constraintSetEnd="@layout/heart_end_layout">
+        <OnSwipe
+            motion:touchAnchorId="@+id/heart_animation"
+            motion:touchAnchorSide="bottom"
+            motion:dragDirection="dragDown" />
+    </Transition>
+
+</MotionScene>
